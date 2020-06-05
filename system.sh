@@ -13,7 +13,7 @@ if [ ! -d $build ]; then
 fi
 
 cp -r test.system/tx-router $build
-cp -r test.system/plugin $build/tx-router
+cp -r plugin $build/tx-router
 cp env.TAG $build
 cp test.system/env.pds $build/tx-router/env.txrouter
 cp test.system/docker-compose.system.yml $build/tx-router/test
@@ -23,7 +23,6 @@ cp test.system/test_func.system.py $build/tx-router/test
 cd $build
 
 set -o allexport
-source env.TAG
 source tx-router/test/env.docker
 INIT_PLUGIN_PATH=./plugin
 set +o allexport
