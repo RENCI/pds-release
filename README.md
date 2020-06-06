@@ -9,11 +9,11 @@ Repo for facilitating coordinated release of multiple pds repos
 ## add submodule
 Add your repo as a submodule under the `module` dir
 
-If your repo have a Dockerfile, then a docker image will be built using that Dockerfile
+If your repo have a `Dockerfile`, then a docker image will be built using that `Dockerfile`
 
 ### Automatic tag discovery
 
-If your repo have a tag <tag>, then the docker image will be tagged with <tag>, otherwise, the hash is going to be used as the tag.
+If your repo have a tag `<tag>`, then the docker image will be tagged with `<tag>`, otherwise, the hash is going to be used as the tag.
 
 ## add yml
 
@@ -21,15 +21,15 @@ Add a yml file under the `plugin` dir
 
 how to write the yml file
 
-see example under plugin/pds.yml
+see example under `plugin/pds.yml`
 
 the image name should be the same as the submodule dir name
 
-the tag should be from envrionment variable <submodule>_TAG
+the tag should be from envrionment variable `<submodule>_TAG`
 
 for all the images that your repo depends on, you can either specify an image with in a remote repo or you can add them as submodules of your repo to utilized the automatic tag discovery mechanism
 
-for each submodule <a>, the image name should be the same as the submodule dir name and the tag should be from envrionment variable <submodule>_<a>_TAG
+for each submodule `<a>`, the image name should be the same as the submodule dir name and the tag should be from envrionment variable `<submodule>_<a>_TAG`
 
 all the tag has `-` replaced by `_`
 
