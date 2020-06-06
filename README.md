@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/RENCI/pds-release.svg?branch=master)](https://travis-ci.com/RENCI/pds-release)
+
 # pds-release
 Repo for facilitating coordinated release of multiple pds repos
 
