@@ -1,7 +1,7 @@
 version: '3'
 services:
   pdspi-guidance-sars-resource:
-    image: txscience/pdspi-guidance-sars:${TX_TAG}
+    image: pdspi-guidance-sars:${pdspi_guidance_sars_TAG}
     port: 8080
     environment:
       SELECTOR_VALUE: "resource"

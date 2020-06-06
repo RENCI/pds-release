@@ -1,6 +1,6 @@
 services:
   pdspi-config:
-    image: txscience/pdspi-config:${TX_TAG}
+    image: pdspi-config:${pdspi_config_TAG}
     environment:
       MONGO_HOST: ${PDSPI_CONFIG_MONGO_HOST}
       MONGO_PORT: ${PDSPI_CONFIG_MONGO_PORT}
@@ -16,7 +16,7 @@ services:
     depends_on:
       - pdspi-config-mongodb
   pdspi-config-mongodb:
-    image: txscience/tx-persistence:${TX_TAG}
+    image: tx-persistence:${pdspi_config_tx_persistence_TAG}
     environment:
       MONGO_INITDB_ROOT_USERNAME: ${PDSPI_CONFIG_MONGO_INITDB_ROOT_USERNAME}
       MONGO_INITDB_ROOT_PASSWORD: ${PDSPI_CONFIG_MONGO_INITDB_ROOT_PASSWORD}

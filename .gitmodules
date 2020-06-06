@@ -1,3 +1,33 @@
 [submodule "test.system/tx-router"]
-	path = test.system/tx-router
+	path = module/tx-router
 	url = https://github.com/RENCI/tx-router
+[submodule "module/pds"]
+	path = module/pds
+	url = https://github.com/RENCI/pds
+[submodule "module/pdspi-config"]
+	path = module/pdspi-config
+	url = https://github.com/RENCI/pdspi-config
+[submodule "module/pdspi-fhir-example"]
+	path = module/pdspi-fhir-example
+	url = https://github.com/RENCI/pdspi-fhir-example
+[submodule "module/pdspi-guidance-example"]
+	path = module/pdspi-guidance-example
+	url = https://github.com/RENCI/pdspi-guidance-example
+[submodule "module/pdspi-guidance-sars"]
+	path = module/pdspi-guidance-sars
+	url = https://github.com/RENCI/pdspi-guidance-sars
+[submodule "module/pdspi-mapper-example"]
+	path = module/pdspi-mapper-example
+	url = https://github.com/RENCI/pdspi-mapper-example
+[submodule "module/tx-generator-dosing"]
+	path = module/tx-generator-dosing
+	url = https://github.com/RENCI/tx-generator-dosing
+[submodule "module/tx-logging"]
+	path = module/tx-logging
+	url = https://github.com/RENCI/tx-logging
+[submodule "module/tx-persistence"]
+	path = module/tx-persistence
+	url = https://github.com/RENCI/tx-persistence
+[submodule "module/tx-vis"]
+	path = module/tx-vis
+	url = https://github.com/RENCI/tx-vis

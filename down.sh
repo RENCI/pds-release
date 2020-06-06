@@ -1,2 +1,2 @@
 #!/bin/bash
-test.system/test.system.sh down
+python system.py down

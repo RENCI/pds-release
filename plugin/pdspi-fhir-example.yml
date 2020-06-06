@@ -1,6 +1,6 @@
 services:
   pdspi-fhir-example:
-    image: txscience/pdspi-fhir-example:${TX_TAG}
+    image: pdspi-fhir-example:${pdspi_fhir_example_TAG}
     environment:
       MONGO_HOST: ${PDSPI_FHIR_EXAMPLE_MONGO_HOST}
       MONGO_PORT: ${PDSPI_FHIR_EXAMPLE_MONGO_PORT}
@@ -13,7 +13,7 @@ services:
     depends_on:
       - pdspi-fhir-example-mongodb
   pdspi-fhir-example-mongodb:
-    image: txscience/tx-persistence:${TX_TAG}
+    image: tx-persistence:${pdspi_fhir_example_tx_persistence_TAG}
     environment:
       MONGO_INITDB_ROOT_USERNAME: ${PDSPI_FHIR_EXAMPLE_MONGO_INITDB_ROOT_USERNAME}
       MONGO_INITDB_ROOT_PASSWORD: ${PDSPI_FHIR_EXAMPLE_MONGO_INITDB_ROOT_PASSWORD}

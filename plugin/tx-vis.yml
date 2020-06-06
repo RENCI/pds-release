@@ -1,5 +1,5 @@
 version: '3'
 services:
   tx-vis:
-    image: txscience/tx-vis:${TX_TAG}
+    image: tx-vis:${tx_vis_TAG}
     port: 8080

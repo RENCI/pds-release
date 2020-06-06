@@ -14,7 +14,6 @@ fi
 
 cp -r test.system/tx-router $build
 cp -r plugin $build/tx-router
-cp env.TAG $build
 cp test.system/env.pds $build/tx-router/env.txrouter
 cp test.system/docker-compose.system.yml $build/tx-router/test
 cp test.system/Dockerfile.system $build/tx-router/test

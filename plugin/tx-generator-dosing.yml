@@ -1,5 +1,5 @@
 version: '3'
 services:
   tx-generator-dosing:
-    image: txscience/tx-generator-dosing:${TX_TAG}
+    image: tx-generator-dosing:${tx_generator_dosing_TAG}
     port: 8080

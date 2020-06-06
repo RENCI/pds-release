@@ -1,7 +1,7 @@
 version: '3'
 services:
   pdslogging-mongodb:
-    image: txscience/tx-persistence:${TX_TAG}
+    image: tx-persistence:${tx_logging_tx_persistence_TAG}
     volumes:
       - type: volume
         source: pdslogging
@@ -15,7 +15,7 @@ services:
       MONGO_NON_ROOT_PASSWORD: pdsloggingpassword
 
   pdslogging-fluentd:
-    image: txscience/tx-fluentd:${TX_TAG}
+    image: tx-fluentd:${tx_logging_tx_fluentd_TAG}
     environment:
       FLUENTD_APP: pdsloggingfluentdapp
       MONGO_HOST: pdslogging-mongodb
@@ -27,7 +27,7 @@ services:
       - pdslogging-mongodb
     
   logging:
-    image: txscience/tx-logging:${TX_TAG}
+    image: tx-logging:${tx_logging_TAG}
     port: 8080
     depends_on:
       - pdslogging-fluentd
