@@ -33,6 +33,17 @@ for each submodule `<a>`, the image name should be the same as the submodule dir
 
 all the tag has `-` replaced by `_`
 
+For example, 
+
+```
+services:
+  a:
+    image: a-b:${a_b_TAG}
+  b:
+    image: c-d:${a_b_c_d_TAG}
+    
+```
+
 ## send a pull request
 
 send a pull request when you release a new version of your repo
