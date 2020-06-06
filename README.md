@@ -9,11 +9,11 @@ Repo for facilitating coordinated release of multiple pds repos
 ## add submodule
 Add your repo as a submodule under the `module` dir
 
-Your repo should have a Dockerfile
+If your repo have a Dockerfile, then a docker image will be built using that Dockerfile
 
-Your repo should also have a tag x.y.z
+### Automatic tag discovery
 
-If the commit of your repo is not tagged then the hash is going to be used as the tag
+If your repo have a tag <tag>, then the docker image will be tagged with <tag>, otherwise, the hash is going to be used as the tag.
 
 ## add yml
 
@@ -27,17 +27,17 @@ the image name should be the same as the submodule dir name
 
 the tag should be from envrionment variable <submodule>_TAG
 
-for all the repos that your repo depends on, add them as submodules of your repo
+for all the images that your repo depends on, you can either specify an image with in a remote repo or you can add them as submodules of your repo to utilized the automatic tag discovery mechanism
 
-for each submodule <a>, the image name should be the same as the submodule dir name
-
-the tag should be from envrionment variable <submodule>_<a>_TAG
+for each submodule <a>, the image name should be the same as the submodule dir name and the tag should be from envrionment variable <submodule>_<a>_TAG
 
 all the tag has `-` replaced by `_`
 
-##
+## send a pull request
 
 send a pull request when you release a new version of your repo
+
+
 
 # step-by-step to add a module
 1. create <my-plugin> repo on pd  
