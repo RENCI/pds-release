@@ -4,11 +4,36 @@ Repo for facilitating coordinated release of multiple pds repos
 
 # how to add your repo in a release
 
-Add your repo as a submodule
+## add submodule
+Add your repo as a submodule under the `module` dir
 
 Your repo should have a Dockerfile
 
-Your repo should also have a tag vx.y.z
+Your repo should also have a tag x.y.z
+
+If the commit of your repo is not tagged then the hash is going to be used as the tag
+
+## add yml
+
+Add a yml file under the `plugin` dir
+
+how to write the yml file
+
+see example under plugin/pds.yml
+
+the image name should be the same as the submodule dir name
+
+the tag should be from envrionment variable <submodule>_TAG
+
+for all the repos that your repo depends on, add them as submodules of your repo
+
+for each submodule <a>, the image name should be the same as the submodule dir name
+
+the tag should be from envrionment variable <submodule>_<a>_TAG
+
+all the tag has `-` replaced by `_`
+
+##
 
 send a pull request when you release a new version of your repo
 
