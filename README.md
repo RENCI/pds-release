@@ -67,11 +67,13 @@ services:
 
 
 # stand up
+
+Pull all submodules
+
 Python 3.8 is required.
 ```
 pip install -r requirements.txt
 ```
-
 ```
 ./up.sh
 ```
