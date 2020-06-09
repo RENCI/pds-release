@@ -48,7 +48,19 @@ services:
 
 send a pull request when you release a new version of your repo
 
+## stand up
+```
+pip install -r requirements.txt
+```
 
+```
+./up.sh
+```
+
+## tear down
+```
+./down.sh
+```
 
 # step-by-step to add a module
 1. create <my-plugin> repo on pd  
