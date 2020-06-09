@@ -62,7 +62,16 @@ pip install -r requirements.txt
 ```
 ./down.sh
 ```
-
+# step-by-step to add module
+1. fork
+1. tag your own repo
+1. add you own repo as submmodule to under `module`
+1. update system integration testing as needed
+1. run tests 
+```hooks/test```
+1. commit
+1. push to your fork
+1. send pull request
 
 # step-by-step to upgrade module
 1. fork
