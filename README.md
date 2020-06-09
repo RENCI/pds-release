@@ -65,11 +65,8 @@ services:
     
 ```
 
-## send a pull request
 
-send a pull request when you release a new version of your repo
-
-## stand up
+# stand up
 Python 3.8 is required.
 ```
 pip install -r requirements.txt
@@ -79,7 +76,7 @@ pip install -r requirements.txt
 ./up.sh
 ```
 
-## tear down
+# tear down
 ```
 ./down.sh
 ```
