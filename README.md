@@ -49,7 +49,7 @@ services:
 send a pull request when you release a new version of your repo
 
 ## stand up
-Python3 is required.
+Python 3.8 is required.
 ```
 pip install -r requirements.txt
 ```
