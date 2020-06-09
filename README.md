@@ -63,13 +63,14 @@ pip install -r requirements.txt
 ./down.sh
 ```
 
-# step-by-step to add a module
-1. create <my-plugin> repo on pd  
-2. clone pds-release repo
-3. create pds-release/plugin/<my-plugin>.yml
-  See "plugin configuration format for ${INIT_PLUGIN_PATH}" in https://github.com/RENCI/tx-router for documentation
-4. make <my-plugin> a submodule of pds-release/sub-modules
 
 # step-by-step to upgrade module
-1. tag your own repo
-2. send pull-request
+1. fork
+1. tag new version your own repo
+1. pull you new version to under `module`
+1. update system integration testing as needed
+1. run tests 
+```hooks/test```
+1. commit
+1. push to your fork
+1. send pull request
