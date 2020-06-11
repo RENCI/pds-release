@@ -6,6 +6,7 @@ import subprocess
 import logging
 from envbash import load_envbash
 import docker
+from git import Repo
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger()
@@ -19,15 +20,13 @@ docker_client = docker.from_env()
 env = {}
 
 def git_tag(submodule_dir):
-    a = subprocess.run(["git", "tag"], capture_output=True, cwd=submodule_dir)
-    a.check_returncode()
-    tag = a.stdout.decode("utf-8").split("\n")[0].strip()
-    if tag == "":
+    repo = Repo(submodule_dir)
+    tags = repo.tags
+    if len(tags) == 0:
         logger.warning(f"submodule at {submodule_dir} does not have a tag, use hash")
-        a = subprocess.run(["git", "rev-parse", "HEAD"], capture_output=True, cwd=submodule_dir)
-        a.check_returncode()
-        tag = a.stdout.decode("utf-8").strip()
+        tag = repo.head.object.hexsha
     else:
+        tag = tags[0]
         logger.info(f"submodule at {submodule_dir} tag {tag}")
     return tag
 
@@ -38,15 +37,11 @@ def get_submodule_version(submodules, submodule_dir):
         env[f"{'_'.join(list(map(lambda s:s.replace('-', '_'), submodules)))}_TAG"] = tag
         build_docker_image(submodules[-1], tag, submodule_dir)
 
-    b = subprocess.run(["git", "submodule", "status"], capture_output=True, cwd=submodule_dir)
-    b.check_returncode()
-    for submodulerow0 in b.stdout.decode("utf-8").split("\n"):
-        # logger.info(f"submodulerow0 {submodulerow0}")
-        submodulerow = submodulerow0.strip()
-        if submodulerow != "":
-            submodule = submodulerow.split(" ")[1]
-            subsubmodule_dir = os.path.join(submodule_dir, submodule)
-            get_submodule_version(submodules + [os.path.basename(submodule)], subsubmodule_dir)
+    repo = Repo(submodule_dir)
+    for submodule in repo.submodules:
+        # logger.info(f"submodulerow {submodulerow}")
+        subsubmodule_dir = submodule.abspath
+        get_submodule_version(submodules + [os.path.basename(subsubmodule_dir)], subsubmodule_dir)
     logger.info(f"done {submodule_dir}")
 
 
