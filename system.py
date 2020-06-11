@@ -26,7 +26,7 @@ def git_tag(submodule_dir):
         logger.warning(f"submodule at {submodule_dir} does not have a tag, use hash")
         tag = repo.head.object.hexsha
     else:
-        tag = tags[0]
+        tag = tags[0].path.split("/")[-1]
         logger.info(f"submodule at {submodule_dir} tag {tag}")
     return tag
 
