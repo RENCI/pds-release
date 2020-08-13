@@ -70,6 +70,10 @@ services:
 
 Pull all submodules
 
+```
+git submodule update --init --recursive --remote
+```
+
 Python 3.8 is required.
 ```
 pip install -r requirements.txt
