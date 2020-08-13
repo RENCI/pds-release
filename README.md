@@ -71,7 +71,7 @@ services:
 Pull all submodules
 
 ```
-git submodule update --init --recursive --remote
+git submodule update --init --recursive
 ```
 
 Python 3.8 is required.
