@@ -1,5 +1,22 @@
 [![Build Status](https://travis-ci.com/RENCI/pds-release.svg?branch=master)](https://travis-ci.com/RENCI/pds-release)
 
+pds: [![Build Status](https://travis-ci.com/RENCI/pds.svg?branch=master)](https://travis-ci.com/RENCI/pds)
+
+pdspi-config: [![Build Status](https://travis-ci.com/RENCI/pdspi-config.svg?branch=master)](https://travis-ci.com/RENCI/pdspi-config)
+
+pdspi-fhir-example: [![Build Status](https://travis-ci.com/RENCI/pdspi-fhir-example.svg?branch=master)](https://travis-ci.com/RENCI/pdspi-fhir-example)
+
+pdspi-mapper-example: [![Build Status](https://travis-ci.com/RENCI/pdspi-mapper-example.svg?branch=master)](https://travis-ci.com/RENCI/pdspi-mapper-example)
+
+pdspi-mapper-example: [![Build Status](https://travis-ci.com/RENCI/pdspi-mapper-parallex-example.svg?branch=master)](https://travis-ci.com/RENCI/pdspi-mapper-paralle-example)
+
+pdspi-guidance-example: [![Build Status](https://travis-ci.com/RENCI/pdspi-guidance-example.svg?branch=master)](https://travis-ci.com/RENCI/pdspi-guidance-example)
+
+tx-logging: [![Build Status](https://travis-ci.com/RENCI/tx-logging.svg?branch=master)](https://travis-ci.com/RENCI/tx-logging)
+
+tx-router: [![Build Status](https://travis-ci.com/RENCI/tx-router.svg?branch=master)](https://travis-ci.com/RENCI/tx-router)
+
+
 # pds-release
 Repo for facilitating coordinated release of multiple pds repos
 
