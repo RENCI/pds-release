@@ -8,7 +8,7 @@ pdspi-fhir-example: [![Build Status](https://travis-ci.com/RENCI/pdspi-fhir-exam
 
 pdspi-mapper-example: [![Build Status](https://travis-ci.com/RENCI/pdspi-mapper-example.svg?branch=master)](https://travis-ci.com/RENCI/pdspi-mapper-example)
 
-pdspi-mapper-example: [![Build Status](https://travis-ci.com/RENCI/pdspi-mapper-parallex-example.svg?branch=master)](https://travis-ci.com/RENCI/pdspi-mapper-paralle-example)
+pdspi-mapper-parallex-example: [![Build Status](https://travis-ci.com/RENCI/pdspi-mapper-parallex-example.svg?branch=master)](https://travis-ci.com/RENCI/pdspi-mapper-paralle-example)
 
 pdspi-guidance-example: [![Build Status](https://travis-ci.com/RENCI/pdspi-guidance-example.svg?branch=master)](https://travis-ci.com/RENCI/pdspi-guidance-example)
 
