@@ -1,0 +1,12 @@
+version: '3.4'
+services:
+  pdspi-mapper-parallex-example:
+    port: 8080
+    image: pdspi-mapper-parallex-example:${pdspi_mapper_parallex_example_TAG}
+    environment:
+      CONFIG_URL: ${PDS_HOST}:${PDS_PORT}/${PDS_VERSION}/plugin/pdspi-config/config/pdspi-mapper-parallex-example
+    volumes:
+      - source: ./module/pdspi-mapper-parallex-example/config
+        target: /usr/src/app/config
+        type: bind
+        read_only: true
