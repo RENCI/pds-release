@@ -21,12 +21,12 @@ env = {}
 
 def git_tag(submodule_dir):
     repo = Repo(submodule_dir)
-    tags = repo.tags
-    if len(tags) == 0:
+    tag = next((tag for tag in repo.tags if tag.commit == repo.head.commit), None)
+    if tag is None:
         logger.warning(f"submodule at {submodule_dir} does not have a tag, use hash")
         tag = repo.head.object.hexsha
     else:
-        tag = tags[0].path.split("/")[-1]
+        tag = tag.path.split("/")[-1]
         logger.info(f"submodule at {submodule_dir} tag {tag}")
     return tag
 
