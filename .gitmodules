@@ -31,3 +31,6 @@
 [submodule "module/tx-vis"]
 	path = module/tx-vis
 	url = https://github.com/RENCI/tx-vis
+[submodule "module/pdspi-mapper-parallex-example"]
+	path = module/pdspi-mapper-parallex-example
+	url = https://github.com/RENCI/pdspi-mapper-parallex-example
