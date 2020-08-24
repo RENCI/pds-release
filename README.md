@@ -103,3 +103,8 @@ pip install -r requirements.txt
 ```
 ./down.sh
 ```
+
+# system testing
+```
+python system.py test
+```
