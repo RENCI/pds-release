@@ -50,6 +50,7 @@ def build_docker_image(submodule, tag, submodule_dir):
     logger.info(f"building image {image} at {submodule_dir}")
     docker_client.images.build(path=submodule_dir, tag=image)
     logger.info(f"done building {image}")
+    docker_client.containers.prune()
         
 
 if os.path.isdir("module"):
