@@ -108,3 +108,15 @@ pip install -r requirements.txt
 ```
 python system.py test
 ```
+
+# enable fhir server from remote
+
+set `PDSPI_FHIR_EXAMPLE_FHIR_SERVER_URL_BASE` in `test.system/env.pds`
+
+# set subnet
+
+set `IPAM_CONFIG_SUBNET` in `test.system/env.pds`
+
+# set config
+
+set `PDSPI_CONFIG_DEFAULT_CONFIG` in `test.system/env.pds`
