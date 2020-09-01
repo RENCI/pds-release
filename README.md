@@ -120,3 +120,8 @@ set `IPAM_CONFIG_SUBNET` in `test.system/env.pds`
 # set config
 
 set `PDSPI_CONFIG_DEFAULT_CONFIG` in `test.system/env.pds`
+
+
+# solving the dns error
+
+try adding `network_mode="host"` in the call to `build` method call in `system.py`.
