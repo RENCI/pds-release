@@ -7,11 +7,18 @@ import logging
 from envbash import load_envbash
 import docker
 from git import Repo
+import argparse
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger()
 
-cmd, *_ = sys.argv[1:]
+parser = argparse.ArgumentParser(description='pds')
+parser.add_argument('cmd', help='a command')
+parser.add_argument('--network', help='--network option for build command')
+
+args = parser.parse_args()
+
+cmd = args.cmd
 
 cwd = os.getcwd()
 
@@ -48,7 +55,7 @@ def get_submodule_version(submodules, submodule_dir):
 def build_docker_image(submodule, tag, submodule_dir):
     image = f"{submodule}:{tag}"
     logger.info(f"building image {image} at {submodule_dir}")
-    docker_client.images.build(path=submodule_dir, tag=image)
+    docker_client.images.build(path=submodule_dir, tag=image, **({"network_mode": args.network} if args.network is not None else {}))
     logger.info(f"done building {image}")
     docker_client.containers.prune()
         
