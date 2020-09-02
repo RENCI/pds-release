@@ -22,5 +22,15 @@ services:
       MONGO_NON_ROOT_PASSWORD: ${PDSPI_FHIR_EXAMPLE_MONGO_NON_ROOT_PASSWORD}
     port: 8080
 
+    volumes:                              
+      - type: volume                      
+        source: pdspi-fhir-example-mongodb
+        target: /data/db                  
+        read_only: false                  
+
+                                          
+volumes:                                  
+  pdspi-fhir-example-mongodb:             
+    persistent: true                      
 
 
