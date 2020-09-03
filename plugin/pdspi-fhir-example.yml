@@ -9,6 +9,7 @@ services:
       MONGO_NON_ROOT_PASSWORD: ${PDSPI_FHIR_EXAMPLE_MONGO_NON_ROOT_PASSWORD}
       FHIR_SERVER_URL_BASE: ${PDSPI_FHIR_EXAMPLE_FHIR_SERVER_URL_BASE}
       CACHE_TTL: ${PDSPI_FHIR_EXAMPLE_CACHE_TTL}
+    command: ["-w", "32", "-t", "100000"]
     port: 8080
     depends_on:
       - pdspi-fhir-example-mongodb
