@@ -9,10 +9,16 @@ services:
       MONGO_NON_ROOT_PASSWORD: ${PDSPI_FHIR_EXAMPLE_MONGO_NON_ROOT_PASSWORD}
       FHIR_SERVER_URL_BASE: ${PDSPI_FHIR_EXAMPLE_FHIR_SERVER_URL_BASE}
       CACHE_TTL: ${PDSPI_FHIR_EXAMPLE_CACHE_TTL}
+      OUTPUT_DIR: /shared
     command: ["-w", "32", "-t", "100000"]
     port: 8080
     depends_on:
       - pdspi-fhir-example-mongodb
+    volumes:                              
+      - type: bind                      
+        source: $SHARED_DIR
+        target: /shared                 
+        read_only: false                  
   pdspi-fhir-example-mongodb:
     image: tx-persistence:${pdspi_fhir_example_tx_persistence_TAG}
     environment:

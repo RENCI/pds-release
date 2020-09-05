@@ -5,8 +5,14 @@ services:
     image: pdspi-mapper-parallex-example:${pdspi_mapper_parallex_example_TAG}
     environment:
       CONFIG_URL: http://${PDS_HOST}:${PDS_PORT}/${PDS_VERSION}/plugin/${PDS_CONFIG}/config/pdspi-mapper-parallex-example
+      OUTPUT_DIR: /shared
+      INPUT_DIR: /shared
     volumes:
       - source: ./module/pdspi-mapper-parallex-example/config
         target: /usr/src/app/config
         type: bind
         read_only: true
+      - type: bind                      
+        source: $SHARED_DIR
+        target: /shared                 
+        read_only: false
