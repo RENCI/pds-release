@@ -13,6 +13,6 @@ services:
         type: bind
         read_only: true
       - type: bind                      
-        source: $SHARED_DIR
+        source: ${SHARED_DIR}
         target: /shared                 
         read_only: false

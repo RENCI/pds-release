@@ -16,7 +16,7 @@ services:
       - pdspi-fhir-example-mongodb
     volumes:                              
       - type: bind                      
-        source: $SHARED_DIR
+        source: ${SHARED_DIR}
         target: /shared                 
         read_only: false                  
   pdspi-fhir-example-mongodb:
