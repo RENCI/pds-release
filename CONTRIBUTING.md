@@ -9,7 +9,7 @@ In terms of inspiration, _PDS_ is about enabling researchers to creaete analytic
 and deployed, as-is, into clinical workflows.
 
 Bug reports and fixes are always welcome! Please follow the
-[issue template on GitHub](https://github.com/RENCI/pds-release/issues/new) for best results.
+[issue template on GitHub](https://github.com/RENCI/pds-release/issues/new/choose) for best results.
 
 Before you suggest a new feature or bugfix to core plugins, consider if it would be better 
 to extend the platform with a new module written to the PDS API specs. If you do create a new module, 
