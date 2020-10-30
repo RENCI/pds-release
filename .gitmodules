@@ -34,3 +34,6 @@
 [submodule "module/pdspi-mapper-parallex-example"]
 	path = module/pdspi-mapper-parallex-example
 	url = https://github.com/RENCI/pdspi-mapper-parallex-example
+[submodule "module/pdspi-guidance-demo-doac"]
+	path = module/pdspi-guidance-demo-doac
+	url = http://github.com/RENCI/pdspi-guidance-demo-doac
