@@ -98,6 +98,7 @@ pip install -r requirements.txt
 ```
 ./up.sh
 ```
+Be sure to configure `pds-release/test.system/env.pds` to suit your needs, particularly the `PDSPI_FHIR_EXAMPLE_FHIR_SERVER_URL_BASE` variable.
 
 # tear down
 ```
