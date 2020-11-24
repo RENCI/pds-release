@@ -20,4 +20,4 @@ branches:
     - master
 
 script:
-  - /bin/bash hooks/test
+  - python system.py test
