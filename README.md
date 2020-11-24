@@ -26,7 +26,7 @@ Repo for facilitating coordinated release of multiple pds repos
 1. add you own repo as submmodule to under `module`
 1. update system integration testing as needed
 1. run tests 
-```hooks/test```
+```tests/test.sh```
 1. commit
 1. push to your fork
 1. send pull request
@@ -37,7 +37,7 @@ Repo for facilitating coordinated release of multiple pds repos
 1. pull you new version to under `module`
 1. update system integration testing as needed
 1. run tests 
-```hooks/test```
+```tests/test.sh```
 1. commit
 1. push to your fork
 1. send pull request
