@@ -67,6 +67,12 @@ services:
 
 
 # stand up
+Install fresh
+```
+git clone --recursive http://github.com/RENCI/pds-release
+```
+
+OR
 
 Pull all submodules
 
