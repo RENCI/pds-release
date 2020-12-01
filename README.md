@@ -67,6 +67,12 @@ services:
 
 
 # stand up
+Install fresh
+```
+git clone --recursive http://github.com/RENCI/pds-release
+```
+
+OR
 
 Pull all submodules
 
@@ -93,13 +99,48 @@ Be sure to configure `pds-release/test.system/env.pds` to suit your needs, parti
 python system.py test
 ```
 
-# enable fhir server from remote
+# enable fhir server
+
+## from remote server
 
 set `PDSPI_FHIR_EXAMPLE_FHIR_SERVER_URL_BASE` in `test.system/env.pds`
 
+##  from local data 
+
+### Ingest local data:
+
+  ```
+  cd module/pdspi-fhir-example
+  PYTHONPATH=tx-utils/src:tx-pcornet-to-fhir/ python ingest.py --base_url http://localhost:8080/v1/plugin/pdspi-fhir-example --input_dir <pcornet_data_path> --input_data_format pcori --output_dir <fhir_data_path>
+  ```
+The PCORNet data in <pcornet_data_path> will be ingested into a docker-managed volume so it will persist between `./down.sh` and `./up.sh`. 
+
+### Check ingestion
+
+1. Manually inspect the FHIR format in <fhir_data_path>
+
+2. Retrieve some records
+
+Find a <patientid> in <fhir_data_path>/Patient/1000.json and run some queries:
+
+```
+curl http://localhost:8080/v1/plugin/pdspi-fhir-example/Patient/<patientid>
+```
+
+```
+curl http://localhost:8080/v1/plugin/pdspi-fhir-example/MedicationRequest?patient=<patientid>
+```
+
+```
+curl http://localhost:8080/v1/plugin/pdspi-fhir-example/Observation?patient=<patientid>
+```
+
+
 # set subnet
 
-set `IPAM_CONFIG_SUBNET` in `test.system/env.pds`
+set `IPAM_CONFIG_SUBNET` in `module/tx-router/test/env.docker`
+
+We recommend keeping a separate "Qualified installation" (QI) document locally to record the value(s) of the subnets used for your development, staging, and production servers. 
 
 # set config
 
