@@ -105,7 +105,7 @@ set `PDSPI_FHIR_EXAMPLE_FHIR_SERVER_URL_BASE` in `test.system/env.pds`
 
 # set subnet
 
-set `IPAM_CONFIG_SUBNET` in `test.system/env.pds`
+set `IPAM_CONFIG_SUBNET` in `module/tx-router/test/env.docker`
 
 # set config
 
