@@ -99,13 +99,15 @@ Be sure to configure `pds-release/test.system/env.pds` to suit your needs, parti
 python system.py test
 ```
 
-# enable fhir server from remote
+# enable fhir server
+
+## from remote server
 
 set `PDSPI_FHIR_EXAMPLE_FHIR_SERVER_URL_BASE` in `test.system/env.pds`
 
-# enable fhir server for serving local data 
+##  from local data 
 
-Ingest local data:
+### Ingest local data:
 
   ```
   cd module/pdspi-fhir-example
@@ -113,7 +115,7 @@ Ingest local data:
   ```
 The PCORNet data in <pcornet_data_path> will be ingested into a docker-managed volume so it will persist between `./down.sh` and `./up.sh`. 
 
-## Check ingestion
+### Check ingestion
 
 1. Manually inspect the FHIR format in <fhir_data_path>
 
@@ -123,6 +125,7 @@ Find a <patientid> in <fhir_data_path>/Patient/1000.json and run some queries:
 
 ```
 curl http://localhost:8080/v1/plugin/pdspi-fhir-example/Patient/<patientid>
+```
 
 ```
 curl http://localhost:8080/v1/plugin/pdspi-fhir-example/MedicationRequest?patient=<patientid>
