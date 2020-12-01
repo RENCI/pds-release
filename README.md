@@ -103,9 +103,41 @@ python system.py test
 
 set `PDSPI_FHIR_EXAMPLE_FHIR_SERVER_URL_BASE` in `test.system/env.pds`
 
+# enable fhir server for serving local data 
+
+Ingest local data:
+
+  ```
+  cd module/pdspi-fhir-example
+  PYTHONPATH=tx-utils/src:tx-pcornet-to-fhir/ python ingest.py --base_url http://localhost:8080/v1/plugin/pdspi-fhir-example --input_dir <pcornet_data_path> --input_data_format pcori --output_dir <fhir_data_path>
+  ```
+The PCORNet data in <pcornet_data_path> will be ingested into a docker-managed volume so it will persist between `./down.sh` and `./up.sh`. 
+
+## Check ingestion
+
+1. Manually inspect the FHIR format in <fhir_data_path>
+
+2. Retrieve some records
+
+Find a <patientid> in <fhir_data_path>/Patient/1000.json and run some queries:
+
+```
+curl http://localhost:8080/v1/plugin/pdspi-fhir-example/Patient/<patientid>
+
+```
+curl http://localhost:8080/v1/plugin/pdspi-fhir-example/MedicationRequest?patient=<patientid>
+```
+
+```
+curl http://localhost:8080/v1/plugin/pdspi-fhir-example/Observation?patient=<patientid>
+```
+
+
 # set subnet
 
 set `IPAM_CONFIG_SUBNET` in `module/tx-router/test/env.docker`
+
+We recommend keeping a separate "Qualified installation" (QI) document locally to record the value(s) of the subnets used for your development, staging, and production servers. 
 
 # set config
 
