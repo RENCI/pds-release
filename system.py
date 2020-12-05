@@ -92,16 +92,16 @@ os.environ["JWT_SECRET"] = "secret"
 os.chdir("tx-router")
 
 if cmd == "deploy":
-    a = subprocess.run(["docker-compose", "-f", "docker-compose.yml", "-f", "nginx/unsecure/docker-compose.yml", "up", "--build", "-V", "-t", "3000", "-d"])
+    a = subprocess.run(["docker-compose", "-f", "docker-compose.yml", "-f", "network/docker-compose.yml", "-f", "nginx/unsecure/docker-compose.yml", "up", "--build", "-V", "-t", "3000", "-d"])
     a.check_returncode()
 elif cmd == "down":
-    a = subprocess.run(["docker-compose", "-f", "docker-compose.yml", "-f", "nginx/unsecure/docker-compose.yml", "down", "-t", "3000"])
+    a = subprocess.run(["docker-compose", "-f", "docker-compose.yml", "-f", "network/docker-compose.yml", "-f", "nginx/unsecure/docker-compose.yml", "down", "-t", "3000"])
     a.check_returncode()
 elif cmd == "keep_containers":
-    a = subprocess.run(["docker-compose", "-f", "docker-compose.yml", "-f", "nginx/unsecure/docker-compose.yml", "-f", "test/docker-compose.system.yml", "up", "--build", "-V", "-t", "3000"])
+    a = subprocess.run(["docker-compose", "-f", "docker-compose.yml", "-f", "network/docker-compose.yml", "-f", "nginx/unsecure/docker-compose.yml", "-f", "test/docker-compose.system.yml", "up", "--build", "-V", "-t", "3000"])
     a.check_returncode()
 elif cmd == "test":
-    a = subprocess.run(["docker-compose", "-f", "docker-compose.yml", "-f", "nginx/unsecure/docker-compose.yml", "-f", "test/docker-compose.system.yml", "up", "--build", "-V", "-t", "3000", "--exit-code-from", "pdsaggregator-test"])
+    a = subprocess.run(["docker-compose", "-f", "docker-compose.yml", "-f", "nginx/unsecure/docker-compose.yml", "-f", "network/test/docker-compose.system.yml", "-f", "test/docker-compose.system.yml", "up", "--build", "-V", "-t", "3000", "--exit-code-from", "pdsaggregator-test"])
     a.check_returncode()
 
 
