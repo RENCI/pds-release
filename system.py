@@ -101,7 +101,7 @@ elif cmd == "keep_containers":
     a = subprocess.run(["docker-compose", "-f", "docker-compose.yml", "-f", "network/docker-compose.yml", "-f", "nginx/unsecure/docker-compose.yml", "-f", "test/docker-compose.system.yml", "up", "--build", "-V", "-t", "3000"])
     a.check_returncode()
 elif cmd == "test":
-    a = subprocess.run(["docker-compose", "-f", "docker-compose.yml", "-f", "nginx/unsecure/docker-compose.yml", "-f", "network/test/docker-compose.system.yml", "-f", "test/docker-compose.system.yml", "up", "--build", "-V", "-t", "3000", "--exit-code-from", "pdsaggregator-test"])
+    a = subprocess.run(["docker-compose", "-f", "docker-compose.yml", "-f", "nginx/unsecure/docker-compose.yml", "-f", "test/docker-compose.system.yml", "up", "--build", "-V", "-t", "3000", "--exit-code-from", "pdsaggregator-test"])
     a.check_returncode()
 
 
