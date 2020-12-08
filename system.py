@@ -71,6 +71,7 @@ os.makedirs(build, exist_ok=True)
 shutil.copytree("module/tx-router", f"{build}/tx-router", dirs_exist_ok=True)
 shutil.copytree("plugin", f"{build}/tx-router/plugin", dirs_exist_ok=True)
 shutil.copy("test.system/env.pds", f"{build}/tx-router/env.txrouter")
+shutil.copy("test.system/docker-compose.yml", f"{build}/tx-router/docker-compose.yml")
 logger.info(f"setting env to {env}")
 os.environ.update(env)
 with open(f"{build}/tx-router/env.txrouter", "a") as f:
@@ -92,13 +93,13 @@ os.environ["JWT_SECRET"] = "secret"
 os.chdir("tx-router")
 
 if cmd == "deploy":
-    a = subprocess.run(["docker-compose", "-f", "docker-compose.yml", "-f", "network/docker-compose.yml", "-f", "nginx/unsecure/docker-compose.yml", "up", "--build", "-V", "-t", "3000", "-d"])
+    a = subprocess.run(["docker-compose", "-f", "docker-compose.yml", "-f", "nginx/unsecure/docker-compose.yml", "up", "--build", "-V", "-t", "3000", "-d"])
     a.check_returncode()
 elif cmd == "down":
-    a = subprocess.run(["docker-compose", "-f", "docker-compose.yml", "-f", "network/docker-compose.yml", "-f", "nginx/unsecure/docker-compose.yml", "down", "-t", "3000"])
+    a = subprocess.run(["docker-compose", "-f", "docker-compose.yml", "-f", "nginx/unsecure/docker-compose.yml", "down", "-t", "3000"])
     a.check_returncode()
 elif cmd == "keep_containers":
-    a = subprocess.run(["docker-compose", "-f", "docker-compose.yml", "-f", "network/docker-compose.yml", "-f", "nginx/unsecure/docker-compose.yml", "-f", "test/docker-compose.system.yml", "up", "--build", "-V", "-t", "3000"])
+    a = subprocess.run(["docker-compose", "-f", "docker-compose.yml", "-f", "nginx/unsecure/docker-compose.yml", "-f", "test/docker-compose.system.yml", "up", "--build", "-V", "-t", "3000"])
     a.check_returncode()
 elif cmd == "test":
     a = subprocess.run(["docker-compose", "-f", "docker-compose.yml", "-f", "nginx/unsecure/docker-compose.yml", "-f", "test/docker-compose.system.yml", "up", "--build", "-V", "-t", "3000", "--exit-code-from", "pdsaggregator-test"])
