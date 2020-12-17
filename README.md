@@ -22,6 +22,13 @@ Repo for facilitating coordinated release of multiple pds repos
 
 Requires Python 3.8+
 
+With conda, this works:
+```
+conda create -n pds python=3.8
+conda activate pds
+```
+
+
 # step-by-step to add module
 see developer guide
 
