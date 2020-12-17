@@ -20,6 +20,8 @@ tx-router: [![Build Status](https://travis-ci.com/RENCI/tx-router.svg?branch=mas
 # pds-release
 Repo for facilitating coordinated release of multiple pds repos
 
+Requires Python 3.8+
+
 # step-by-step to add module
 see developer guide
 
